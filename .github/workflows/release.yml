@@ -27,7 +27,7 @@ jobs:
         uses: goreleaser/goreleaser-action@v3
         with:
           version: latest
-          args: release --skip-publish
+          args: release --skip-publish --timeout 120m
         env:
           GITHUB_TOKEN: ${{ secrets.SELEFRA_TOKEN }}
 
@@ -47,7 +47,7 @@ jobs:
         uses: goreleaser/goreleaser-action@v3
         with:
           version: latest
-          args: release --rm-dist
+          args: release --rm-dist --timeout 120m
         env:
           GITHUB_TOKEN: ${{ secrets.SELEFRA_TOKEN }}
 
